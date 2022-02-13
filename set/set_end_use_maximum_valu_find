@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int tc,i,j,n,x;
+    cin>>tc;
+    while(tc--){
+        cin>>n;
+        set<int>st;
+        set<int>::iterator it;
+        for(i=0; i<n; i++){
+            cin>>x;
+            st.insert(x);
+        }
+        cout<<*st.end()<<endl;
+    }
+
+}
