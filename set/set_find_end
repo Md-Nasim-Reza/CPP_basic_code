@@ -1,0 +1,21 @@
+//codeforces problem A. Integer Diversity
+
+#include<bits/stdc++.h>
+using namespace std;
+ int main(){
+     int tc,i,x,n;
+     cin>>tc;
+     while(tc--){
+        cin>>n;
+        set<int>st;
+        for(i=0; i<n; i++){
+            cin>>x;
+            if(st.find(x)==st.end())
+                st.insert(x);
+            else
+                st.insert(-1*x);
+        }
+        cout<<st.size()<<endl;
+     }
+return 0;
+ }
