@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int n;
+vector<int>v;
+vector<int>ss;
+void bf(int k){
+    if(n==k){
+        for(int x:ss)
+            cout<<x<<" ";
+        cout<<endl;
+        return;
+    }
+    ss.push_back(v[k]);
+    bf(k+1);
+    ss.pop_back();
+    bf(k+1);
+}
+int main(){
+    v = {0,1,2};
+    n=3;
+    bf(0);
+return 0;
+}
