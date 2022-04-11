@@ -1,0 +1,70 @@
+#include<bits/stdc++.h>
+#include<math.h>
+#define ll long long
+#define vl vector<ll>
+#define vi vector<int>
+#define v2 vector<vector<int>>
+#define pb push_back
+#define nl endl
+#define yes "YES"
+#define no "NO"
+#define mod 1000000007
+#define mod1 998244353
+#define ull unsigned long long
+#define     in_range(i,x,y)    for(int i=x;i<y;i++)
+#define     in_range1(i,x,y)    for(int i=x;i<=y;i++)
+#define st_input for(int i=x; i<y; i++) {cin>>st[i];}
+using namespace std;
+ll arr[1000010];
+vector<ll>v;
+void sieve(){
+    ll i,j,n=1000010;
+    v.pb(2);
+    for(i=3; i<n; i+=2){
+        if(arr[i]==0){
+            v.pb(i);
+            if(i>n/i)
+                continue;
+            for(j=i*i; j<=n;  j+=(i+i)){
+                arr[j]=1;
+            }
+        }
+    }
+}
+void solve(){
+    ll i,n,x,y,sum;
+    string st;
+    cin>>n;
+    cin>>st;
+   map<int,pair<int,int> >mp;
+    for(i=0; i<n; i++){
+        x = st[i]-'0';
+        if(x==1 or x==4 or x==6 or x==8 or x==9){
+            cout<<1<<nl;
+            cout<<x<<nl;
+            return;
+        }
+    }
+    int a,b;
+    for(i=0; i<n-1; i++){
+        sum = (st[i]-'0')+(st[i+1]-'0');
+        a = st[i]-'0';
+        b= st[i+1]-'0';
+        mp.insert(make_pair(sum,make_pair(a,b)));
+    }
+    for(auto it : mp){
+        cout<<it.second.first<<" "<<it.second.second<<nl;
+
+    }
+
+}
+int main(){
+    ll i,tc,n,ans;
+    sieve();
+    cin>>tc;
+    while(tc--){
+       solve();
+    }
+
+return 0;
+}
