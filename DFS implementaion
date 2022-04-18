@@ -1,0 +1,31 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+vector<int>ve[1000];
+bool visit[1000];
+vector<int>ans;
+void dfs(int src){
+    if(visit[src]==1)
+        return ;
+    ans.push_back(src);
+    visit[src]=1;
+    for(auto u:ve[src])
+        dfs(u);
+}
+int main(){
+    int i,j,n,u,v,w,e,src;
+    cin>>n>>e;
+
+    for(i=1; i<=e; i++){
+        cin>>u>>v;
+        ve[u].push_back(v);
+        ve[v].push_back(u);
+    }
+    printf("Enter the source node: ");
+    cin>>src;
+    dfs(src);
+    for(i=0; i<ans.size(); i++)
+        cout<<ans[i]<<" ";
+    cout<<endl;
+return 0;
+}
