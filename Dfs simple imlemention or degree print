@@ -1,0 +1,18 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int i,j,n,u,v,w,e,src;
+    cin>>n>>e;
+    vector<pair<int,int> > ve[1000];
+    for(i=1; i<=e; i++){
+        cin>>u>>v>>w;
+        ve[u].push_back({v,w});
+        ve[v].push_back({u,w});
+    }
+    // node a degree
+    printf("Enter The source node: ");
+    cin>>src;
+    cout<<ve[src].size()<<endl;
+return 0;
+}
