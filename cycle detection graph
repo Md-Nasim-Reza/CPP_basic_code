@@ -1,0 +1,29 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+vector<int>ve[10000];
+int visit[100000];
+bool dfs(int node, int par){
+    visit[node]=1;
+    for(auto child:ve[node]){
+        if(visit[child]==0){
+            if(dfs(child, node)==true) return true;
+        }
+        else
+            if(child!=par) return true;
+    }
+    return false;
+}
+int main(){
+    int i,j,n,m,u,v;
+    cin>>n>>m;
+    for(i=0; i<m; i++){
+        cin>>u>>v;
+        ve[u].push_back(v);
+        ve[v].push_back(u);
+    }
+    if(dfs(1,1))
+        cout<<"Cycle\n";
+    else cout<<"NOt Cycle\n";
+return 0;
+}
