@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int n,i,x;
+    while(true){
+    cin>>n;
+    x = sqrt(n);
+    vector<int>v;
+    for(i=1; i<=x; i++){
+        if(n%i==0){
+            if(i==n/i) v.push_back(i);
+            else{
+                v.push_back(i);
+                v.push_back(n/i);
+            }
+        }
+    }
+    sort(v.begin(),v.end());
+    for(i=0; i<v.size(); i++)
+        printf("%d ", v[i]);
+    cout<<endl;
+    }
+return 0;
+}
+// 16 = 3
+// 1 16 = 1/16
+//2 8 = 16/2
+//4 4 = 16/4
