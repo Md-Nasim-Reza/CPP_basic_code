@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int arr[1000];
+int main(){
+    int n,i,iteam;
+    while(1){
+        cin>>n;
+        for(i=0; i<n; i++)
+            cin>>arr[i];
+        cin>>iteam;
+        bool bb = binary_search(arr, arr+n,iteam);
+        cout<<bb<<endl;
+    }
+}
