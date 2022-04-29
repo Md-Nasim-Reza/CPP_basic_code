@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int a,b,n,gcd;
+    cin>>n;
+    while(n--){
+        cin>>a>>b;
+        gcd = __gcd(a,b);
+        printf("Gcd: %d\n", gcd);
+    }
+return 0;
+}
