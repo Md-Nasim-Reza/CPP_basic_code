@@ -1,0 +1,21 @@
+/// squar root check
+#include<bits/stdc++.h>
+using namespace std;
+bool BS(int l, int r, int iteam){
+    int mid;
+    while(l<=r){
+        mid = l+(r-l)/2;
+        if(mid*mid==iteam)
+            return true;
+        if(mid*mid<iteam) l = mid+1;
+        else
+            r = mid-1;
+    }
+    return false;
+}
+int main(){
+    int n,i,iteam;
+    cin>>n;
+    bool bb = BS(0,n,n);
+       cout<<bb<<endl;
+}
