@@ -1,0 +1,26 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t,i,j,a,n,temp,arr[100010];
+    cin>>t;
+    while(t--){
+        cin>>a;
+        for(i=0; i<a; i++)
+            cin>>arr[i];
+       for(i=0; i<a; i++){
+            for(j=0; j<a-i-1; j++){
+                if(arr[j] > arr[j+1]){
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+       }
+
+        for(i=0; i<a; i++)
+            cout<<arr[i]<<" ";
+    }
+return 0;
+}
+
