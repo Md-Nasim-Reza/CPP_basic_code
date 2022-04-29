@@ -1,0 +1,25 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int NoD[100010],SoD[100010];
+vector<int>alldiv[100000];
+int main(){
+    int i,j,n;
+    for(i=1; i<=100000; i++){
+        for(j=i; j<=100000; j+=i){
+            NoD[j]++;
+            SoD[j]+=i;
+            alldiv[j].push_back(i);
+        }
+    }
+    while(1){
+        cin>>n;
+        cout<<"Number of divisor = "<<NoD[n]<<endl;
+        cout<<"Some of divesor = "<<SoD[n]<<endl;
+        cout<<"All Divisor\n";
+        for(i=0; i<alldiv[n].size(); i++)
+            cout<<alldiv[n][i]<<" ";
+        cout<<endl;
+    }
+    return 0;
+}
