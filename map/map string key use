@@ -1,0 +1,20 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n,i,a;
+    string s;
+    map<string,int>mp;
+    cin>>n;
+    for(i=0; i<n; i++){
+        cin>>s;
+        cin>>a;
+        mp[s] = a;
+    }
+    for(auto it : mp){
+        s = it.first;
+        cout<<s<<' '<<mp[s]<<"\n";
+        cout<<it.first<< ' '<< it.second<<endl;
+    }
+return 0;
+}
