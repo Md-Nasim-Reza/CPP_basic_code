@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int ar[100010];
+main(){
+    int i,j,n,x,p=0;
+    cin>>n;
+    for(i=0; i<n; i++){
+        cin>>ar[i];
+    }
+    cin>>x;
+    sort(ar, ar+n);
+    i=0,j=n-1;
+    while(i<j){
+        if(ar[i]+ar[j]==x){
+            printf("yes\n");
+            p=1;
+            break;
+        }
+        else if(ar[i]+ar[j]<x)
+            i++;
+        else
+            j--;
+    }
+    if(p==0)
+        cout<<"NO\n";
+return 0;
+}
