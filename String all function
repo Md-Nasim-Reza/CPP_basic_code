@@ -1,0 +1,22 @@
+#include<bits\stdc++.h>
+using namespace std;
+//1. sort function, 2. compare function, 3.string cat, 4. string copy.
+main(){
+    int i;
+    string str, str1,copy_str;
+    cin>> str;
+    cin >> str1;
+    if(str==str1)
+        cout << "two string is equal"<<endl;
+    else if(str>str1)
+        cout<<"first string is larger"<<endl;
+    else
+        cout<<"second string is small" << endl;
+    str+=str1;
+    cout << "string cut: "<<str<<endl;
+    sort(str.begin(),str.end());
+    cout << "string sort: "<<str<<endl;
+    copy_str = str;
+    cout<<"first string copy to copy_str:"<<copy_str<<endl;
+return 0;
+}
