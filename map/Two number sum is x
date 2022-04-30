@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int ar[100010];
+main(){
+    int i,j,n,y,p=0;
+    map<int,int>mp;
+    cin>>n;
+    for(i=0; i<n; i++){
+        cin>>ar[i];
+        mp[ar[i]]=1;
+    }
+    for(i=0; i<n; i++){
+        y = n-ar[i];
+        if(mp[y]==1){
+            printf("YES\n");
+            p=1;
+        }
+    }
+    if(p==0)
+        printf("NO\n");
+return 0;
+}
+
