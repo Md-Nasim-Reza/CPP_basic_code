@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int Pow(int a, int b){
+    int x=1,i;
+    for(i=1; i<=b; i++){
+        x*=a;
+    }
+    return x;
+}
+main(){
+    int a,b,pow;
+    while(true){
+        cin>>a>>b;
+        pow = Pow(a,b);
+        cout<<pow<<endl;
+    }
+}
