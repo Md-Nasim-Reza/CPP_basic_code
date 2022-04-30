@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int t,a,b,x;
+    cin>>t;
+    while(t--){
+        cin>>a>>b;
+        x = (a+b-1)/b;
+        cout<<x<<endl;
+    }
+return 0;
+}
