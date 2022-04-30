@@ -1,0 +1,11 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int i;
+    string str;
+    cin>>str;
+    for(i=0; i<(int)str.size(); i++)
+        cout << str[i] <<" ";
+    cout << "\n";
+return 0;
+}
