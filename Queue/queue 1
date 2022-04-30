@@ -1,0 +1,17 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,n;
+    queue<int>qu;
+    cin>>n;
+    while(n--){
+        cin>>a;
+        qu.push(a);
+    }
+    while(!qu.empty()){
+        cout<<qu.front();
+        qu.pop();
+    }
+return 0;
+}
