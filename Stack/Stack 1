@@ -1,0 +1,18 @@
+
+#include<bits/stdc++.h>
+using  namespace std;
+int main(){
+    int a,t;
+    stack<int>st;
+    cin>>t;
+    while(t--){
+        cin>>a;
+        st.push(a);
+    }
+    while(!st.empty()){
+        cout<<st.top()<<" ";
+        st.pop();
+    }
+    cout<<endl;
+return 0;
+}
