@@ -1,0 +1,44 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int ar[100010];
+vector<int>v;
+void sieve()
+{
+    int i,j,n=100010;
+    v.push_back(2);
+    for(i=3; i<n; i+=2)
+    {
+        if(ar[i]==0)
+        {
+            v.push_back(i);
+            if(i>n/i)
+                continue;
+            for(j=i*i; j<=n; j+=(i+i))
+                ar[j]=1;
+        }
+    }
+}
+
+int main()
+{
+    int i,j,n,x,y,c;
+    sieve();
+    while(cin>>n){
+        for(i=0;v[i]*v[i]<=n;i++){
+            if(n%v[i]==0){
+                c=0;
+                while(n%v[i]==0){
+                    n/=v[i];
+                    c++;
+                }
+                printf("%d %d\n",v[i],c);
+            }
+        }
+        if(n!=1){
+            printf("%d 1\n",n);
+        }
+    }
+
+    return 0;
+}
