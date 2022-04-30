@@ -1,0 +1,17 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,n;
+    vector<int>v;
+    cin>>n;
+    while(n--){
+        cin>>a;
+        v.push_back(a);
+    }
+    while(!v.empty()){
+        cout<<v.back();
+        v.pop_back();
+    }
+    return 0;
+}
