@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,n;
+    priority_queue<int>pqu;
+    cin>>n;
+    while(n--){
+        cin>>a;
+        pqu.push(a);
+    }
+    while(!pqu.empty()){
+        cout<<pqu.top();
+        pqu.pop();
+    }
+return 0;
+}
