@@ -1,0 +1,23 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+
+struct str{
+    int a,b;
+
+}st[100];
+bool cmp(str st1,str st2){
+    if(st1.a!=st2.b) return st1.a<st2.a;
+    return st1.b>st2.b;
+}
+int main(){
+    int i,j,n;
+    cin>>n;
+    for(i=0; i<n; i++){
+        cin>>st[i].a>>st[i].b;
+    }
+    sort(st,st+n,cmp);
+    for(j=0; j<n; j++)
+        cout<<st[j].a<<' '<<st[j].b<<endl;
+return 0;
+}
