@@ -1,0 +1,88 @@
+///BUGLIFE - A Bug’s Life spoj
+
+#include<bits/stdc++.h>
+#include<math.h>
+#include<string>
+#define ll long long
+#define vl vector<ll>
+#define vi vector<int>
+#define v2 vector<vector<int>>
+#define pb push_back
+#define nl endl
+#define yes "YES"
+#define no "NO"
+#define mod 1000000007
+#define mod1 998244353
+#define ull unsigned long long
+#define     in_range(i,x,y)    for(int i=x;i<y;i++)
+#define     in_range1(i,x,y)    for(int i=x;i<=y;i++)
+#define  N 1000
+using namespace std;
+ll visit[1000001],color[1000001],cnt=0;
+vector<ll>graph[1000001];
+bool dfs(ll node, ll col){
+    visit[node]=1;
+    color[node]=col;
+    for(ll child:graph[node]){
+        if(!visit[child]){
+            bool res = dfs(child,col^1);
+            if(res==false){
+                return false;
+            }
+        }
+        else if(color[node]==color[child]){
+            return false;
+        }
+    }
+    return true;
+}
+
+void solve(){
+    ll n,m,u,v,i,j;
+    cnt++;
+
+
+    cin>>n>>m;
+
+    for(i=1; i<=n; i++){
+        graph[i].clear();
+        visit[i]=0;
+    }
+
+    for(i=1; i<=m; i++){
+        cin>>u>>v;
+        graph[u].pb(v);
+        graph[v].pb(u);
+    }
+
+    bool possibal=true;
+
+    for(i=1; i<=n; i++){
+        if(visit[i]==0){
+            bool ans=dfs(i,0);
+            if(ans==false){
+                possibal=false;
+            }
+        }
+    }
+    //printf("Scenario #%lld:\n",cnt);
+    cout<<"Scenario #"<<cnt<<":"<<nl;
+    if(possibal==false){
+        cout<<"Suspicious bugs found!"<<nl;
+    }
+    else{
+        cout<<"No suspicious bugs found!"<<nl;
+    }
+}
+
+
+int main(){
+    ll i,tc,n,Pow,m,ans;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cin>>tc;
+    while(tc--){
+        solve();
+    }
+return 0;
+}
