@@ -1,0 +1,65 @@
+///Farthest Nodes in a Tree Lightoj
+
+#include<bits/stdc++.h>
+#include<math.h>
+#include<string>
+#define ll long long
+#define vl vector<ll>
+#define vi vector<int>
+#define pb push_back
+#define nl endl
+#define yes "YES"
+#define no "NO"
+#define mod 1000000007
+#define mod1 998244353
+#define ull unsigned long long
+using namespace std;
+vector<pair<ll,ll> > vp[100000];
+ll visit[100000];
+ll maxD,MaxNode;
+ll cas=0;
+
+void dfs(ll node, ll d){
+    visit[node]=1;
+
+    if(d>maxD) maxD = d,MaxNode = node;
+    for(int i=0; i<vp[node].size(); i++){
+        ll child = vp[node][i].first;
+        if(visit[child]==0){
+            dfs(child,d+vp[node][i].second);
+        }
+    }
+}
+
+void solve(){
+    ll n,m,u,v,i,j,k,w,ans=0;
+    cin>>n;
+    cas++;
+    for(i=0; i<=n; i++){
+        visit[i]=0,vp[i].clear();
+    }
+    for(i=0; i<n-1; i++){
+        cin>>u>>v>>w;
+        vp[u].pb({v,w});
+        vp[v].pb({u,w});
+    }
+    maxD=-1;
+    dfs(0,0);
+    for(i=0; i<=n; i++){
+        visit[i]=0;
+    }
+    maxD=-1;
+    dfs(MaxNode,0);
+    cout<<"Case "<<cas<<": "<<maxD<<nl;
+}
+
+int main(){
+    ll i,tc,n,Pow,m,ans;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cin>>tc;
+    while(tc--){
+        solve();
+    }
+return 0;
+}
